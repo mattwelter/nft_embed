@@ -1,0 +1,165 @@
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<style>
+	body {
+		width: 100%;
+	}
+
+	#content {
+		font-family: Helvetica, Arial, sans-serif;
+		width: 800px;
+		margin: 0 auto;
+		margin-top: -20vw;
+		display: block;
+		padding: 0px 0px 100px 0px;
+	}
+
+	.userInputtedEthAddress {
+		display: inline;
+	}
+
+	#backgroundImage {
+		z-index: -99;
+		width: 100%;
+		margin-top: -200px;
+	}
+
+	.centered {
+		text-align: center;
+	}
+
+	#blurb {
+		margin-top: -14px;
+		color: #666;
+	}
+
+	#bmac {
+		margin: 25px 0px 75px 36%;
+		display: block;
+	}
+
+	#logos {
+		display: block;
+		margin: 0 auto;
+		width: 400px;
+		padding: 10px 0px;
+	}
+
+	h1 {
+		font-size: 54px;
+		line-height: 68px;
+		color: #333;
+	}
+
+	h2 {
+		font-size: 26px;
+	}
+
+	input {
+		padding: 16px 24px;
+		width: 100%;
+		color: #666;
+		font-size: 24px;
+		background: #fafafa;
+		border: 1.34219px solid #E2E2E2;
+		box-sizing: border-box;
+	}
+
+	#previewText {
+		letter-spacing: -0.03em;
+		font-family: 'Formular';
+		color: #333;
+		margin-top: 48px;
+	}
+
+	h1, h3, h4 {
+		font-family: 'Formular';
+	}
+
+	h2, p {
+		font-family: 'GT America Mono';
+	}
+
+	h3 {
+		font-weight: 400;
+	}
+
+	.codeBlocks {
+	  font-family: Consolas,"courier new";
+	  color: crimson;
+	  background-color: #f1f1f1;
+	  padding: 8px;
+	  font-size: 14px;
+	  width: 800px;
+	  height: inherit;
+	}
+
+	div > p {
+		padding: 16px 24px;
+	}
+
+	@font-face {
+	  font-family: 'Formular';
+	  src: url('formular-regular.eot'); /* IE9 Compat Modes */
+	  src: url('formular-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	       url('formular-regular.woff2') format('woff2'), /* Super Modern Browsers */
+	       url('formular-regular.woff') format('woff'), /* Pretty Modern Browsers */
+	       url('formular-regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+	}
+	@font-face {
+	  font-family: 'GT America Mono';
+	  src: url('GT-America-Mono-Regular.eot'); /* IE9 Compat Modes */
+	  src: url('GT-America-Mono-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	       url('GT-America-Mono-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+	       url('GT-America-Mono-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+	       url('GT-America-Mono-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+	}
+</style>
+<script type="text/javascript"> 
+	function updateNow(evt){
+	    var div = evt.target.parentNode;
+	    var input = div.querySelector('.user_input');
+	    var value = input.value;
+	    div.querySelector('.userInputtedEthAddress').innerHTML = value;
+	    div.querySelector('.userInputtedEthAddress2').innerHTML = value;
+	} 
+	addEventListener('click', updateNow);
+</script>
+<script type="text/javascript">
+	function changeLink(inputElement)
+	{
+	    $('#change').attr("src","https://mattwelter.github.io/niftycase/?addr="+inputElement.value);
+	    console.log($('#change').attr("src"));
+	}
+</script>
+<body>
+	<img id="backgroundImage" src="codeBG.png">
+	<div id="content">
+		<h1 class="centered">Embed your NFT <br>collection on your website!</h1>
+		<h3 id="blurb" class="centered">Fully customized embedded NFT galleries for any use.</h3>
+		<img id="logos" src="images.png">
+		<div id="bmac">
+			<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="mattwelter" data-color="#FFDD00" data-emoji="" data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff"></script>
+		</div>
+
+		<h3>Enter your Ethereum address below.</h3>
+		<form>
+			<input class="user_input" value="0x4c20bf92b0b4e7191cee473ba73aa71d2be33fe6" onkeyup="changeLink(this);">
+		</form>
+		<h2 id="previewText">Preview</h2>
+		<iframe id="change" src="https://mattwelter.github.io/niftycase/?addr=0x4c20bf92b0b4e7191cee473ba73aa71d2be33fe6" style="top:0px; left:0px; 
+		  width:100%; height:350px; border: none; overflow: hidden; margin: 0 auto; display: block;"></iframe>
+		<h4>Code for &lt;iframe&gt;</h4>
+		<div class="codeBlocks">
+			<p>
+			  &lt;iframe src="https://mattwelter.github.io/niftycase/?addr=<span class="userInputtedEthAddress">0x4c20bf92b0b4e7191cee473ba73aa71d2be33fe6</span>" style="top:0px; left:0px; 
+		  width:100%; height:100%; border: none; overflow: hidden;"&gt;&lt;/iframe&gt;
+			</p>
+		</div>
+		<h4>Embed link for Notion</h4>
+		<div class="codeBlocks">
+			<p>
+			  https://mattwelter.github.io/niftycase/?addr=<span class="userInputtedEthAddress2">0x4c20bf92b0b4e7191cee473ba73aa71d2be33fe6</span>
+			</p>
+		</div>
+	</div>
+</body>
