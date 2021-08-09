@@ -1,600 +1,602 @@
-<!DOCTYPE html>
-<html lang="EN" class="js-focus-visible" data-js-focus-visible="">
-  <head>
-      <title>Niftycase – Embedded NFT Gallery</title>
-      <meta content="Niftycase – Embedded NFT Gallery" property="og:title">
-      <meta content="Show off your NFTs on any website!" property="og:description">
-      <link rel="icon" href="media/favicon.png" type="image/x-icon"/>
-      <link rel="shortcut icon" href="media/favicon.png" type="image/x-icon"/>
-      <meta property="og:title" content="Niftycase – Embedded NFT Gallery" />
-      <meta property="og:url" content="https://niftycaseio" />
-      <meta property="og:image" content="media/thumbnail.png" />
-      <meta name="description" content="Embed your NFTs on any website!">
+<html class="js-focus-visible" data-js-focus-visible=""><head>
+    <title>Niftycase – Embedded NFT Gallery</title>
+    <meta content="Niftycase – Embedded NFT Gallery" property="og:title">
+    <meta content="Show off your NFTs on any website!" property="og:description">
+    <link rel="icon" href="media/favicon.png" type="image/x-icon"/>
+    <link rel="shortcut icon" href="media/favicon.png" type="image/x-icon"/>
+    <meta property="og:title" content="Niftycase – Embedded NFT Gallery" />
+    <meta property="og:url" content="https://niftycaseio" />
+    <meta property="og:image" content="media/thumbnail.png" />
+    <meta name="description" content="Embed your NFTs on any website!">
 
-      <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-      <link rel="stylesheet" href="https://apple.com/wss/fonts?families=SF+Pro,v3|SF+Pro+Icons,v3" type="text/css" media="all">
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://apple.com/wss/fonts?families=SF+Pro,v3|SF+Pro+Icons,v3" type="text/css" media="all">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
-      <style>
-        html, body {
-          height: 100%; }
-        
-          .userInputtedEthAddress {
-            display: inline;
-          }
 
-          #backgroundImage {
-            z-index: -99;
-            width: 100%;
-            margin-top: -200px;
-          }
-
-          .centered {
-            text-align: center;
-          }
-
-          #blurb {
-            text-align: left;
-            color: #898C8C;
-            font-size: 21px;
-            line-height: 160%;
-          }
-
-          #bmac {
-            display: block;
-            text-align: left;
-            margin-top: 16px;
-          }
-
-          #logos {
-            display: block;
-            width: 300px;
-            padding: 10px 0px;
-            margin-left: -11px;
-          }
-
-          #content {
-            margin-top: 56px;
-          }
-
-          h1 {
-            font-size: 56px;
-            color: #333;
-            text-align: left;
-            font-weight: 700;
-          }
-
-          h2 {
-            font-size: 28px;
-          }
-
-          nav {
-            font-size: 19px;
-          }
-
-          nav ul {
-            padding-left: 0px;
-          }
-
-          nav ul li {
-            display: inline-block;
-            padding-right: 24px;
-          }
-
-          ul li a, ul li a:visited {
-            color: black;
-          }
-
-          #navigation {
-            left: 0px;
-            display: flex;
-          }
-
-          #socialLinks {
-            right: 0px;
-            top: 0px;
-            display: flex;
-            float: right;
-          }
-
-          #socialLinks li {
-            padding-right: 0px;
-            padding-left: 24px;
-          }
-
-          #socialLinks img {
-            width: 32px;
-          }
-
-          form {
-            text-align: left;
-          }
-
-          input {
-            padding: 16px 24px;
-            width: 500px;
-            color: #2f5f5f;
-            font-size: 16px;
-            letter-spacing: 1px;
-            box-shadow: 0px 4px 16px #becccc;
-            border: 1px solid #9db9b9;
-            border-radius: 16px;
-            box-sizing: border-box;
-            text-align: left;
-            transition: color 0.3s, background 0.3s, transform 0.3s;
-            background: url(media/ethLogo.png) no-repeat scroll 18px 14px;
-            background-color: white;
-            background-size: 28px;
-            padding-left: 54px;
-          }
-
-          #embedCode {
-            margin-top: -56px;
-          }
-
-          #enterText {
-            margin: 16px 0px;
-          }
-
-          #genButton {
-            width: fit-content;
-            background: #E0FF88;
-            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-            font-weight: 500;
-            border: 1px solid #AAC462;
-            box-sizing: border-box;
-            border-radius: 6px;
-            font-size: 14px;
-            border-radius: 16px;
-            padding-left: 24px;
-            margin-left: 8px;
-          }
-
-          #genButton:hover {
-            background: #E0FF88;
-          }
-
-          #previewText {
-            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: 0em;
-            text-align: left;
-            margin: 56px 0px 16px 0px;
-          }
-
-          .subHeading {
-            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: 0em;
-            text-align: left;
-            margin: 56px 0px 16px 0px;
-          }
-
-          #createNiftycase, #faq h2, #changelog h2 {
-            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-            font-weight: 700;
-            font-size: 35px;
-            text-align: left;
-          }
-
-          h1, h3, h4 {
-            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-          }
-
-          h4 {
-            font-size: 17px;
-            letter-spacing: 3%;
-            text-align: left;
-          }
-
-          .codeBlockHeading {
-            margin-top: 24px;
-          }
-
-          h2, p {
-            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-          }
-
-          h3 {
-            font-weight: 400;
-          }
-
-          .codeBlocks {
-            color: #E0FF88;
-            background-color: #2F373A;
-            padding: 16px 24px 2px 24px;
-            border-radius: 4px;
-            font-size: 14px;
-            width: 100%;
-          }
-
-          .codeBLocks > p {
-            margin-bottom: 12px ​!important;
-            font-family: 'IBM Plex Mono',Consolas,"courier new", monospace;
-            font-weight: 400;
-          }
-
-        #faq, #changelog {
-          margin-top: 48px;
+    <style>
+      html, body {
+        height: 100%; }
+      
+        .userInputtedEthAddress {
+          display: inline;
         }
 
-        .faqHeading {
-          margin-top: 36px;
-          margin-bottom: 24px;
-        }
-
-        #faq div {
-          background-color: #FFF;
-          padding: 20px 28px 14px 28px;
-          margin: 16px 0px;
-          box-shadow: 0px 4px 16px #becccc;
-          border: 1px solid #9db9b9;
-          border-radius: 16px;
-        }
-
-        #faq h2 {
-          margin: 64px 0px 28px 0px;
-        }
-
-        #faq h3 {
-          font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-          font-size: 21px;
-          font-weight: 700;
-          color: #265454;
-        }
-
-        #faq h4 {
-          color: #8b8b8b;
-          line-height: 22px;
-        }
-
-
-        #speachBubble {
+        #backgroundImage {
+          z-index: -99;
           width: 100%;
+          margin-top: -200px;
+        }
+
+        .centered {
+          text-align: center;
+        }
+
+        #blurb {
+          text-align: left;
+          color: #898C8C;
+          font-size: 21px;
+          line-height: 160%;
+        }
+
+        #bmac {
           display: block;
-          /* position: inherit; */
-          bottom: 0px;
-          margin-bottom: 48px;
+          text-align: left;
+          margin-top: 16px;
+        }
+
+        #logos {
+          display: block;
+          width: 300px;
+          padding: 10px 0px;
+          margin-left: -11px;
+        }
+
+        #content {
           margin-top: 56px;
         }
 
-        #bubble {
-          box-shadow: 0px 4px 16px #eaeaea;
-          border: 2px solid #f7f7f7;
-          background-color: #fff;
-          border-radius: 16px;
-          padding: 24px;
-        }
-
-        #profilepic {
-          width: 36px;
-          border-radius: 24px;
-          margin-top: -22px;
-        }
-
-        #speachbubble > div > section {
-          display: inline-block;
-        }
-
-        #speachbubble > div > section > p:nth-child(1) {
+        h1 {
+          font-size: 56px;
           color: #333;
+          text-align: left;
+          font-weight: 700;
+        }
+
+        h2 {
+          font-size: 28px;
+        }
+
+        nav {
+          font-size: 19px;
+        }
+
+        nav ul {
+          padding-left: 0px;
+        }
+
+        nav ul li {
+          display: inline-block;
+          padding-right: 24px;
+        }
+
+        ul li a, ul li a:visited {
+          color: black;
+        }
+
+        #navigation {
+          left: 0px;
+          display: flex;
+        }
+
+        #socialLinks {
+          right: 0px;
+          top: 0px;
+          display: flex;
+          float: right;
+        }
+
+        #socialLinks li {
+          padding-right: 0px;
+          padding-left: 24px;
+        }
+
+        #socialLinks img {
+          width: 32px;
+        }
+
+        form {
+          text-align: left;
+        }
+
+        input {
+          padding: 16px 24px;
+          width: 500px;
+          color: #2f5f5f;
+          font-size: 16px;
+          letter-spacing: 1px;
+          box-shadow: 0px 4px 16px #becccc;
+          border: 1px solid #9db9b9;
+          border-radius: 16px;
+          box-sizing: border-box;
+          text-align: left;
+          transition: color 0.3s, background 0.3s, transform 0.3s;
+          background: url(media/ethLogo.png) no-repeat scroll 18px 14px;
+          background-color: white;
+          background-size: 28px;
+          padding-left: 54px;
+        }
+
+        #embedCode {
+          margin-top: -56px;
+        }
+
+        #enterText {
+          margin: 16px 0px;
+        }
+
+        #genButton {
+          width: fit-content;
+          background: #E0FF88;
+          font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
           font-weight: 500;
+          border: 1px solid #AAC462;
+          box-sizing: border-box;
+          border-radius: 6px;
+          font-size: 14px;
+          border-radius: 16px;
+          padding-left: 24px;
+          margin-left: 8px;
         }
 
-        #speachbubble > div > section > p:nth-child(2) {
-          color: #757575;
+        #genButton:hover {
+          background: #E0FF88;
+        }
+
+        #previewText {
+          font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+          font-size: 24px;
+          font-weight: 700;
+          letter-spacing: 0em;
+          text-align: left;
+          margin: 56px 0px 16px 0px;
+        }
+
+        .subHeading {
+          font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+          font-size: 24px;
+          font-weight: 700;
+          letter-spacing: 0em;
+          text-align: left;
+          margin: 56px 0px 16px 0px;
+        }
+
+        #createNiftycase, #faq h2, #changelog h2 {
+          font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+          font-weight: 700;
+          font-size: 35px;
+          text-align: left;
+        }
+
+        h1, h3, h4 {
+          font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+        }
+
+        h4 {
+          font-size: 17px;
+          letter-spacing: 3%;
+          text-align: left;
+        }
+
+        .codeBlockHeading {
+          margin-top: 24px;
+        }
+
+        h2, p {
+          font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+        }
+
+        h3 {
+          font-weight: 400;
+        }
+
+        .codeBlocks {
+          color: #E0FF88;
+          background-color: #2F373A;
+          padding: 16px 24px 2px 24px;
+          border-radius: 4px;
+          font-size: 14px;
+          width: 100%;
+        }
+
+        .codeBLocks > p {
+          margin-bottom: 12px ​!important;
+          font-family: 'IBM Plex Mono',Consolas,"courier new", monospace;
+          font-weight: 400;
+        }
+
+      #faq, #changelog {
+        margin-top: 48px;
+      }
+
+      .faqHeading {
+        margin-top: 36px;
+        margin-bottom: 24px;
+      }
+
+      #faq div {
+        background-color: #FFF;
+        padding: 20px 28px 14px 28px;
+        margin: 16px 0px;
+        box-shadow: 0px 4px 16px #becccc;
+        border: 1px solid #9db9b9;
+        border-radius: 16px;
+      }
+
+      #faq h2 {
+        margin: 64px 0px 28px 0px;
+      }
+
+      #faq h3 {
+        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+        font-size: 21px;
+        font-weight: 700;
+        color: #265454;
+      }
+
+      #faq h4 {
+        color: #8b8b8b;
+        line-height: 22px;
+      }
+
+
+      #speachBubble {
+        width: 100%;
+        display: block;
+        /* position: inherit; */
+        bottom: 0px;
+        margin-bottom: 48px;
+        margin-top: 56px;
+      }
+
+      #bubble {
+        box-shadow: 0px 4px 16px #eaeaea;
+        border: 2px solid #f7f7f7;
+        background-color: #fff;
+        border-radius: 16px;
+        padding: 24px;
+      }
+
+      #profilepic {
+        width: 36px;
+        border-radius: 24px;
+        margin-top: -22px;
+      }
+
+      #speachbubble > div > section {
+        display: inline-block;
+      }
+
+      #speachbubble > div > section > p:nth-child(1) {
+        color: #333;
+        font-weight: 500;
+      }
+
+      #speachbubble > div > section > p:nth-child(2) {
+        color: #757575;
+        font-size: 12px;
+        letter-spacing: 0.4px;
+      }
+
+      #speachbubble > div > section > p:nth-child(1), #speachbubble > div > section > p:nth-child(2) {
+        margin: 0px;
+        padding-left: 8px;
+      }
+
+      #madeBy, #madeBy a, #madeBy a:visited {
+        font-size: 13px;
+        color: #8b8b8b;
+        text-align: center;
+        margin-top: 28px;
+        padding-bottom: 48px;
+      }
+
+      .left-section {
+        width: 35% !important;
+        min-width: 628px;
+      }
+
+      .right-section {
+        width: 65% !important;
+      }
+      
+      .splitView {
+        display: flex;
+        justify-content: space-between;}
+      
+      .splitView__view {
+        width: 50%;
+        box-sizing: border-box;
+        height: 100%;}
+      
+      .splitView__view--wallpaper {
+        background-position: 0 50%;
+        overflow: hidden;
+        position: relative; }
+        .splitView__view--wallpaper:after {
+          display: block;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0; }
+      
+      .splitView__view--content {
+        padding: 3em 5em;
+        background-color: #EAF0F0;}
+        .splitView__view--content p {
+          text-align: left;
+          line-height: 1.5;
+          margin-top: 0; }
+      
+      .fadeIn {
+        position: fixed;
+        height: 100%;
+        width: 35%;
+        min-width: 628px;
+        opacity: 1;
+        padding: 45px 64px;
+        box-shadow: 10px 0px 24px #dee6e6;
+      }
+
+      #loader {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, .75) url(img/spinner.svg) no-repeat center center; 
+            z-index: 10000
+        }
+      
+      @-webkit-keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateX(500px); }
+        to {
+          opacity: 1;
+          transform: translateX(0px); } }
+
+      @media (min-width: 1780px) {
+        .subHeading {
+          margin: 92px 0px 16px 0px;
+        }
+      }
+      @media (max-width: 1300px) {
+        #embedCode {
+          margin-top: 0px;
+        }
+        input {
+          width: 100%;
+        }
+      }
+      @media (max-width: 500px) {
+        nav {
+          font-size: 14px;
+        }
+        nav ul li {
+          padding-right: 16px;
+        }
+        #sociallinks li {
+          padding-left: 8px !important;
+        }
+        #socialLinks img {
+          width: 24px;
+        }
+        h1 {
+          font-size: 36px !important;
+          letter-spacing: -1px;
+        }
+        h4 {
+          font-size: 14px;
+        }
+        #blurb {
+          font-size: 14px !important;
+        }
+        #logos {
+          padding: 4px 0px;
+        }
+        input {
+          font-size: 14px;
+          box-shadow: 0px 4px 16px #d4dede;
+          background: url(media/ethLogo.png) no-repeat scroll 17px 13px;
+          background-color: white;
+          background-size: 26px;
+          padding-left: 52px;
+        }
+        .codeBlocks {
+          overflow: hidden;
           font-size: 12px;
-          letter-spacing: 0.4px;
         }
-
-        #speachbubble > div > section > p:nth-child(1), #speachbubble > div > section > p:nth-child(2) {
-          margin: 0px;
-          padding-left: 8px;
+        #createNiftycase {
+          font-size: 21px;
+          margin-top: 24px;
         }
-
-        #madeBy, #madeBy a, #madeBy a:visited {
-          font-size: 13px;
-          color: #8b8b8b;
-          text-align: center;
-          margin-top: 28px;
-          padding-bottom: 48px;
+        #previewText, .subHeading {
+          font-size: 17px !important;
         }
-
+        #previewText {
+          margin: 32px 0px 16px 0px;
+        }
         .left-section {
-          width: 35% !important;
-          min-width: 628px;
+          min-width: 0px;
+        }
+        .fadeIn, .splitView__view--content {
+          padding: 28px 35px !important;
+        }
+        .splitView__view--wallpaper {
+          height: 475px !important;
+        }
+      }
+
+      @media (max-width: 1515px) {
+        .fadeIn {
+          width: 525px;
+        }
+        #socialLinks li {
+            padding-left: 2px;
+            opacity: 0.35;
+        }
+      }
+
+      @media (max-width: 745px) {
+        #embedCode {
+          margin-top: 24px !important;
+        }
+      }
+
+      @media (max-width: 1080px) {
+        h1 {
+          font-size: 45px;
+        }
+        #blurb {
+          font-size: 17px;
+        }
+        .fadeIn {
+          position: relative;
+          width: 100%;
+          min-width: 0px;
+        }
+        .left-section, .right-section {
+          width: 100% !important;
+        }
+        #socialLinks li {
+            padding-left: 24px;
+            opacity: 1;
+        }
+        #embedCode {
+          margin-top: -45px;
+        }
+        #logos {
+          width: 275px;
+        }
+        a.button {
+          margin-bottom: 100px;
+        }
+        #speachBubble {
+          display: none;
+        }
+        .splitView {
+          display: block; }
+
+        .splitView__view {
+          width: 100%;
         }
 
         .right-section {
-          width: 65% !important;
+          height: 310% !important;
         }
-        
-        .splitView {
-          display: flex;
-          justify-content: space-between;}
-        
-        .splitView__view {
-          width: 50%;
-          box-sizing: border-box;
-          height: 100%;}
-        
-        .splitView__view--wallpaper {
-          background-position: 0 50%;
-          overflow: hidden;
-          position: relative; }
-          .splitView__view--wallpaper:after {
-            display: block;
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0; }
-        
+
         .splitView__view--content {
-          padding: 3em 5em;
-          background-color: #EAF0F0;}
-          .splitView__view--content p {
-            text-align: left;
-            line-height: 1.5;
-            margin-top: 0; }
-        
-        .fadeIn {
-          position: fixed;
-          height: 100%;
-          width: 35%;
-          min-width: 628px;
-          opacity: 1;
-          padding: 45px 64px;
-          box-shadow: 10px 0px 24px #dee6e6;
+          padding: 3em 4em;
         }
-
-        #loader {
-              display: none;
-              position: fixed;
-              top: 0;
-              left: 0;
-              right: 0;
-              bottom: 0;
-              width: 100%;
-              background: rgba(0, 0, 0, .75) url(img/spinner.svg) no-repeat center center; 
-              z-index: 10000
-          }
-        
-        @-webkit-keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateX(500px); }
-          to {
-            opacity: 1;
-            transform: translateX(0px); } }
-
-        @media (min-width: 1780px) {
-          .subHeading {
-            margin: 92px 0px 16px 0px;
-          }
-        }
-        @media (max-width: 1300px) {
-          #embedCode {
-            margin-top: 0px;
-          }
-          input {
-            width: 100%;
-          }
-        }
-        @media (max-width: 500px) {
-          nav {
-            font-size: 14px;
-          }
-          nav ul li {
-            padding-right: 16px;
-          }
-          #sociallinks li {
-            padding-left: 8px !important;
-          }
-          #socialLinks img {
-            width: 24px;
-          }
-          h1 {
-            font-size: 36px !important;
-            letter-spacing: -1px;
-          }
-          h4 {
-            font-size: 14px;
-          }
-          #blurb {
-            font-size: 14px !important;
-          }
-          #logos {
-            padding: 4px 0px;
-          }
-          input {
-            font-size: 14px;
-            box-shadow: 0px 4px 16px #d4dede;
-            background: url(media/ethLogo.png) no-repeat scroll 17px 13px;
-            background-color: white;
-            background-size: 26px;
-            padding-left: 52px;
-          }
-          .codeBlocks {
-            overflow: hidden;
-            font-size: 12px;
-          }
-          #createNiftycase {
-            font-size: 21px;
-            margin-top: 24px;
-          }
-          #previewText, .subHeading {
-            font-size: 17px !important;
-          }
-          #previewText {
-            margin: 32px 0px 16px 0px;
-          }
-          .left-section {
-            min-width: 0px;
-          }
-          .fadeIn, .splitView__view--content {
-            padding: 28px 35px !important;
-          }
-          .splitView__view--wallpaper {
-            height: 475px !important;
-          }
-        }
-
-        @media (max-width: 1515px) {
-          .fadeIn {
-            width: 525px;
-          }
-          #socialLinks li {
-              padding-left: 2px;
-              opacity: 0.35;
-          }
-        }
-
-        @media (max-width: 745px) {
-          #embedCode {
-            margin-top: 24px !important;
-          }
-        }
-
-        @media (max-width: 1080px) {
-          h1 {
-            font-size: 45px;
-          }
-          #blurb {
-            font-size: 17px;
-          }
-          .fadeIn {
+      
+        .splitView__view--wallpaper {
+          height: 565px; }
+          .splitView__view--wallpaper .screenshot {
             position: relative;
-            width: 100%;
-            min-width: 0px;
-          }
-          .left-section, .right-section {
-            width: 100% !important;
-          }
-          #socialLinks li {
-              padding-left: 24px;
-              opacity: 1;
-          }
-          #embedCode {
-            margin-top: -45px;
-          }
-          #logos {
-            width: 275px;
-          }
-          a.button {
-            margin-bottom: 100px;
-          }
-          #speachBubble {
-            display: none;
-          }
-          .splitView {
-            display: block; }
+            margin: 0 auto;
+            left: auto; }
+      
+        .press {
+          display: block; }
+      
+        .press__logo {
+          margin: 0 auto; } }
 
-          .splitView__view {
-            width: 100%;
-          }
+      @media (max-width: 1200px) {
+        .press {
+          display: block; }
+      
+        .press__logo {
+          margin: 0 auto; } }
 
-          .right-section {
-            height: 310% !important;
-          }
+      @font-face {
+        font-family: 'Formular';
+        font-style: normal;
+        font-weight: 300;
+        src: url('formular-regular.eot'); /* IE9 Compat Modes */
+        src: url('formular-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+             url('formular-regular.woff2') format('woff2'), /* Super Modern Browsers */
+             url('formular-regular.woff') format('woff'), /* Pretty Modern Browsers */
+             url('formular-regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+      }
 
-          .splitView__view--content {
-            padding: 3em 4em;
-          }
-        
-          .splitView__view--wallpaper {
-            height: 565px; }
-            .splitView__view--wallpaper .screenshot {
-              position: relative;
-              margin: 0 auto;
-              left: auto; }
-        
-          .press {
-            display: block; }
-        
-          .press__logo {
-            margin: 0 auto; } }
+      @font-face {
+        font-family: 'Formular';
+        font-style: normal;
+        font-weight: 500;
+        src: url('formular-medium.eot'); /* IE9 Compat Modes */
+        src: url('formular-medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+             url('formular-medium.woff2') format('woff2'), /* Super Modern Browsers */
+             url('formular-medium.woff') format('woff'), /* Pretty Modern Browsers */
+             url('formular-medium.ttf')  format('truetype'), /* Safari, Android, iOS */
+      }
 
-        @media (max-width: 1200px) {
-          .press {
-            display: block; }
-        
-          .press__logo {
-            margin: 0 auto; } }
+      @font-face {
+        font-family: 'Formular';
+        font-style: normal;
+        font-weight: 700;
+        src: url('formular-black.eot'); /* IE9 Compat Modes */
+        src: url('formular-black.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+             url('formular-black.woff2') format('woff2'), /* Super Modern Browsers */
+             url('formular-black.woff') format('woff'), /* Pretty Modern Browsers */
+             url('formular-black.ttf')  format('truetype'), /* Safari, Android, iOS */
+      }
 
-        @font-face {
-          font-family: 'Formular';
-          font-style: normal;
-          font-weight: 300;
-          src: url('formular-regular.eot'); /* IE9 Compat Modes */
-          src: url('formular-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-               url('formular-regular.woff2') format('woff2'), /* Super Modern Browsers */
-               url('formular-regular.woff') format('woff'), /* Pretty Modern Browsers */
-               url('formular-regular.ttf')  format('truetype'), /* Safari, Android, iOS */
-        }
-
-        @font-face {
-          font-family: 'Formular';
-          font-style: normal;
-          font-weight: 500;
-          src: url('formular-medium.eot'); /* IE9 Compat Modes */
-          src: url('formular-medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-               url('formular-medium.woff2') format('woff2'), /* Super Modern Browsers */
-               url('formular-medium.woff') format('woff'), /* Pretty Modern Browsers */
-               url('formular-medium.ttf')  format('truetype'), /* Safari, Android, iOS */
-        }
-
-        @font-face {
-          font-family: 'Formular';
-          font-style: normal;
-          font-weight: 700;
-          src: url('formular-black.eot'); /* IE9 Compat Modes */
-          src: url('formular-black.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-               url('formular-black.woff2') format('woff2'), /* Super Modern Browsers */
-               url('formular-black.woff') format('woff'), /* Pretty Modern Browsers */
-               url('formular-black.ttf')  format('truetype'), /* Safari, Android, iOS */
-        }
-
-        @font-face {
-          font-family: 'GT America Mono';
-          src: url('GT-America-Mono-Regular.eot'); /* IE9 Compat Modes */
-          src: url('GT-America-Mono-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-               url('GT-America-Mono-Regular.woff2') format('woff2'), /* Super Modern Browsers */
-               url('GT-America-Mono-Regular.woff') format('woff'), /* Pretty Modern Browsers */
-               url('GT-America-Mono-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
-        }
-      </style>
+      @font-face {
+        font-family: 'GT America Mono';
+        src: url('GT-America-Mono-Regular.eot'); /* IE9 Compat Modes */
+        src: url('GT-America-Mono-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+             url('GT-America-Mono-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+             url('GT-America-Mono-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+             url('GT-America-Mono-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+      }
+    </style>
 
 
 
-      <script type="text/javascript"> 
-        function updateNow(evt){
-            var div = evt.target.parentNode;
-            var input = div.querySelector('.user_input');
-            var value = input.value;
-            div.querySelector('.userInputtedEthAddress').innerHTML = value;
-            div.querySelector('.userInputtedEthAddress2').innerHTML = value;
-        } 
-        addEventListener('click', updateNow);
-      </script>
+    <script type="text/javascript"> 
+      function updateNow(evt){
+          var div = evt.target.parentNode;
+          var input = div.querySelector('.user_input');
+          var value = input.value;
+          div.querySelector('.userInputtedEthAddress').innerHTML = value;
+          div.querySelector('.userInputtedEthAddress2').innerHTML = value;
+      } 
+      addEventListener('click', updateNow);
+    </script>
 
 
 
-      <script type="text/javascript">
-        function changeLink(inputElement)
-        {
-            $('#change').attr("src","https://mattwelter.github.io/niftycase/?addr="+inputElement.value);
-            console.log($('#change').attr("src"));
-        }
-      </script>
+    <script type="text/javascript">
+      function changeLink(inputElement)
+      {
+          $('#change').attr("src","https://mattwelter.github.io/niftycase/?addr="+inputElement.value);
+          console.log($('#change').attr("src"));
+      }
+    </script>
+
+
+
   </head>
   <body>
     <div class="splitView">
