@@ -114,14 +114,20 @@
 
         input {
           padding: 16px 24px;
-          width: 100%;
-          color: #666;
+          width: 500px;
+          color: #2f5f5f;
           font-size: 16px;
           letter-spacing: 1px;
-          background: #fff;
-          border: 1px solid #B4B4B4;
+          box-shadow: 0px 4px 16px #becccc;
+          border: 1px solid #9db9b9;
+          border-radius: 16px;
           box-sizing: border-box;
           text-align: left;
+          transition: color 0.3s, background 0.3s, transform 0.3s;
+          background: url(media/ethLogo.png) no-repeat scroll 18px 14px;
+          background-color: white;
+          background-size: 28px;
+          padding-left: 54px;
         }
 
         #embedCode {
@@ -141,7 +147,9 @@
           box-sizing: border-box;
           border-radius: 6px;
           font-size: 14px;
-          display: none;
+          border-radius: 16px;
+          padding-left: 24px;
+          margin-left: 8px;
         }
 
         #genButton:hover {
@@ -166,7 +174,7 @@
           margin: 56px 0px 16px 0px;
         }
 
-        #createNiftycase {
+        #createNiftycase, #faq h2, #changelog h2 {
           font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
           font-weight: 700;
           font-size: 35px;
@@ -198,7 +206,8 @@
         .codeBlocks {
           color: #E0FF88;
           background-color: #2F373A;
-          padding: 16px 24px 8px 24px;
+          padding: 16px 24px 2px 24px;
+          border-radius: 4px;
           font-size: 14px;
           width: 100%;
         }
@@ -209,9 +218,91 @@
           font-weight: 400;
         }
 
-        #ethLogoInput {
+      #faq, #changelog {
+        margin-top: 48px;
+      }
 
-        }
+      .faqHeading {
+        margin-top: 36px;
+        margin-bottom: 24px;
+      }
+
+      #faq div {
+        background-color: #FFF;
+        padding: 20px 28px 14px 28px;
+        margin: 16px 0px;
+        box-shadow: 0px 4px 16px #becccc;
+        border: 1px solid #9db9b9;
+        border-radius: 16px;
+      }
+
+      #faq h2 {
+        margin: 64px 0px 28px 0px;
+      }
+
+      #faq h3 {
+        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+        font-size: 21px;
+        font-weight: 700;
+        color: #265454;
+      }
+
+      #faq h4 {
+        color: #8b8b8b;
+        line-height: 22px;
+      }
+
+
+      #speachBubble {
+        width: 100%;
+        display: block;
+        /* position: inherit; */
+        bottom: 0px;
+        margin-bottom: 48px;
+        margin-top: 56px;
+      }
+
+      #bubble {
+        box-shadow: 0px 4px 16px #eaeaea;
+        border: 2px solid #f7f7f7;
+        background-color: #fff;
+        border-radius: 16px;
+        padding: 24px;
+      }
+
+      #profilepic {
+        width: 36px;
+        border-radius: 24px;
+        margin-top: -22px;
+      }
+
+      #speachbubble > div > section {
+        display: inline-block;
+      }
+
+      #speachbubble > div > section > p:nth-child(1) {
+        color: #333;
+        font-weight: 500;
+      }
+
+      #speachbubble > div > section > p:nth-child(2) {
+        color: #757575;
+        font-size: 12px;
+        letter-spacing: 0.4px;
+      }
+
+      #speachbubble > div > section > p:nth-child(1), #speachbubble > div > section > p:nth-child(2) {
+        margin: 0px;
+        padding-left: 8px;
+      }
+
+      #madeBy, #madeBy a, #madeBy a:visited {
+        font-size: 13px;
+        color: #8b8b8b;
+        text-align: center;
+        margin-top: 28px;
+        padding-bottom: 48px;
+      }
 
       .left-section {
         width: 35% !important;
@@ -228,7 +319,6 @@
       
       .splitView__view {
         width: 50%;
-        text-align: center;
         box-sizing: border-box;
         height: 100%;}
       
@@ -282,10 +372,17 @@
           opacity: 1;
           transform: translateX(0px); } }
 
-
+      @media (min-width: 1780px) {
+        .subHeading {
+          margin: 92px 0px 16px 0px;
+        }
+      }
       @media (max-width: 1300px) {
         #embedCode {
           margin-top: 0px;
+        }
+        input {
+          width: 100%;
         }
       }
       @media (max-width: 500px) {
@@ -303,7 +400,7 @@
         }
         h1 {
           font-size: 36px !important;
-          letter-spacing: -2px;
+          letter-spacing: -1px;
         }
         h4 {
           font-size: 14px;
@@ -316,6 +413,11 @@
         }
         input {
           font-size: 14px;
+          box-shadow: 0px 4px 16px #d4dede;
+          background: url(media/ethLogo.png) no-repeat scroll 17px 13px;
+          background-color: white;
+          background-size: 26px;
+          padding-left: 52px;
         }
         .codeBlocks {
           overflow: hidden;
@@ -386,7 +488,9 @@
         a.button {
           margin-bottom: 100px;
         }
-
+        #speachBubble {
+          display: none;
+        }
         .splitView {
           display: block; }
 
@@ -395,7 +499,7 @@
         }
 
         .right-section {
-          height: 200% !important;
+          height: 310% !important;
         }
 
         .splitView__view--content {
@@ -504,9 +608,9 @@
               <li><a href="" target="_blank"><img src="media/ph.png"></a></li>
             </ul>
             <ul id="navigation">
-              <li><a href="#" target="_blank">Niftycase</a></li>
-              <li><a href="" target="_blank">Changelog</a></li>
-              <li><a href="" target="_blank">FAQ</a></li>
+              <li><a href="#">Niftycase</a></li>
+              <li><a href="#changelog">Changelog</a></li>
+              <li><a href="#faq">FAQ</a></li>
             </ul>
           </nav>
           <section id="content">
@@ -515,6 +619,16 @@
             <img id="logos" src="media/images.png">
             <div id="bmac">
               <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="mattwelter" data-color="#FFDD00" data-emoji="" data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff"></script>
+            </div>
+          </section>
+          <section id="speachBubble">
+            <p id="bubble">Thanks for checking out Niftycase! Let me know if you have any <b>bugs, feedback, or feature requests!</b> – <a href="mailto:welter.m@icloud.com?subject=Niftycase Inquiry&body=Select which fits your Inquiry: %0D%0A%0D%0A[Bug] [Feedback] [Feature] [Other]%0D%0A%0D%0A—%0D%0A%0D%0AHi Matt,">Email me</a> (:</p>
+            <div>
+              <img id="profilepic" src="media/mattwelter.png">
+              <section>
+                <p>Matt Welter</p>
+                <p>Creator of Niftycase</p>
+              </section>
             </div>
           </section>
         </div>
@@ -548,9 +662,65 @@
             </p>
           </div>
         </section>
+        <section id="faq">
+          <h2>Frequently Asked Questions</h2>
+          <h3 class="faqHeading">How to use</h3>
+          <div>
+            <h3>How can I embed this into my website?</h3>
+            <h4>Copy the 'Code for &lt;iframe&gt;' code & paste it into your site's code!</h4>
+          </div>
+          <div>
+            <h3>How can I embed this into my Notion document?</h3>
+            <h4>Copy the 'Embed link for Notion' code, paste it into your Notion document & click 'Embed link'</h4>
+          </div>
+          <div>
+            <h3>Will Niftycase show all my NFTs?</h3>
+            <h4>Niftycase will only show the most recent 20 NFTs. If there were any more, the Niftycase navigation would be broken on mobile.</h4>
+          </div>
+          <h3 class="faqHeading">General</h3>
+          <div>
+            <h3>Is Niftycase open source?</h3>
+            <h4>Yes! Hosted on <a href="https://github.com/mattwelter/niftycase" target="_blank">Github</a></h4>
+          </div>
+          <div>
+            <h3>Is this free?</h3>
+            <h4>Yup!</h4>
+          </div>
+          <div>
+            <h3>Are there different gallary styles?</h3>
+            <h4>Not yet! Still working on a few different styles.</h4>
+          </div>
+          <h3 class="faqHeading">Functionality</h3>
+          <div>
+            <h3>Will this work with my ENS domain?</h3>
+            <h4>Nope, still working on it. For now, use your eth addess.</h4>
+          </div>
+          <div>
+            <h3>Will this work with Yat?</h3>
+            <h4>Not yet, currently trying to work with the team!</h4>
+          </div>
+          <div>
+            <h3>Will this work with Linktree, linkbio, or other similar services?</h3>
+            <h4>Not yet, currently trying to figure that out!</h4>
+          </div>
+        </section>
+<!--
+        <section id="changelog">
+          <h2>Changelog</h2>
+          <ul>
+            <li><a>Version 1.21</a></li>
+            <ol>
+              <li><a>Added input button</a></li>
+              <li><a>Fixed bug</a></li>
+            </ol>
+            <li><a>Version 1.2</a></li>
+            <li><a>Version 1.1</a></li>
+            <li><a>Version 1.0</a></li>
+          </ul>
+        </section>
+-->
+        <p id="madeBy">Made with <a style="font-size: 14px;">☕</a> &nbsp;by <a href="https://twitter.com/_mattwelter" target="_blank">@mattwelter</a></p>
       </div>
-
-
     </div>
   </body>
 </html>
