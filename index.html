@@ -35,7 +35,7 @@
         #blurb {
           text-align: left;
           color: #898C8C;
-          font-size: 17px;
+          font-size: 21px;
           line-height: 160%;
         }
 
@@ -57,11 +57,10 @@
         }
 
         h1 {
-          font-size: 45px;
+          font-size: 56px;
           color: #333;
           text-align: left;
           font-weight: 700;
-          letter-spacing: -2px;
         }
 
         h2 {
@@ -212,7 +211,7 @@
 
       .left-section {
         width: 35% !important;
-        min-width: 525px;
+        min-width: 628px;
       }
 
       .right-section {
@@ -253,6 +252,7 @@
         position: fixed;
         height: 100%;
         width: 35%;
+        min-width: 628px;
         opacity: 1;
         padding: 45px 64px;
       }
@@ -297,13 +297,13 @@
           width: 24px;
         }
         h1 {
-          font-size: 36px;
+          font-size: 36px !important;
         }
         h4 {
           font-size: 14px;
         }
         #blurb {
-          font-size: 14px;
+          font-size: 14px !important;
         }
         #logos {
           padding: 4px 0px;
@@ -349,9 +349,16 @@
       }
 
       @media (max-width: 1080px) {
+        h1 {
+          font-size: 45px;
+        }
+        #blurb {
+          font-size: 17px;
+        }
         .fadeIn {
           position: relative;
           width: 100%;
+          min-width: 0px;
         }
         .left-section, .right-section {
           width: 100% !important;
@@ -473,12 +480,12 @@
         <div class="fadeIn">
           <nav>
             <ul id="socialLinks">
-              <li><a href="" target="_blank"><img src="media/twitter.png"></a></li>
-              <li><a href="" target="_blank"><img src="media/github.png"></a></li>
+              <li><a href="https://twitter.com/_mattwelter" target="_blank"><img src="media/twitter.png"></a></li>
+              <li><a href="https://github.com/mattwelter/niftycase_landing" target="_blank"><img src="media/github.png"></a></li>
               <li><a href="" target="_blank"><img src="media/ph.png"></a></li>
             </ul>
             <ul id="navigation">
-              <li><a href="" target="_blank">Niftycase</a></li>
+              <li><a href="#" target="_blank">Niftycase</a></li>
               <li><a href="" target="_blank">Changelog</a></li>
               <li><a href="" target="_blank">FAQ</a></li>
             </ul>
