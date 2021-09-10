@@ -803,6 +803,7 @@
 
       <div class="splitView__view right-section splitView__view--content">
         <h2 id="createNiftycase">Create your Niftycase</h2>
+        <!--
         <section id="selectDisplayContainer">
           <label id="selectDisplayTitle" for="selectDisplay">Select display type:</label>
           <select class="form-control" id="selectDisplay">
@@ -810,13 +811,14 @@
             <option id="infinitescroll">Infinite scroll</option>
           </select>
         </section>
+      -->
         <h4 id="enterText">Enter your Ethereum address below.</h4>
         <form>
           <input id="user_input" class="user_input" value="0x6C4cb3C4Da1CdC4B7B1F41099F6eacbd82D8F2d2">
           <input id="genButton" type="button" value="Update">
         </form>
         <h2 id="previewText">Embed preview</h2>
-        <iframe id="change" src="https://mattwelter.github.io/niftycase/?addr=0x6C4cb3C4Da1CdC4B7B1F41099F6eacbd82D8F2d2&view=1" style="top:0px; left:0px; 
+        <iframe id="change" src="https://mattwelter.github.io/niftycase/?addr=0x6C4cb3C4Da1CdC4B7B1F41099F6eacbd82D8F2d2" style="top:0px; left:0px; 
           width:100%; height:400px; border: none; overflow: hidden; margin: 0 auto; display: block;"></iframe>
   
         <section id="embedCode">
@@ -824,14 +826,14 @@
           <h4 class="codeBlockHeading">Code for &lt;iframe&gt;</h4>
           <div class="codeBlocks">
             <p>
-              &lt;iframe src="https://mattwelter.github.io/niftycase/?addr=<span id="1">0x6C4cb3C4Da1CdC4B7B1F41099F6eacbd82D8F2d2</span><span id="1view">&view=1</span>" style="top:0px; left:0px; 
+              &lt;iframe src="https://mattwelter.github.io/niftycase/?addr=<span id="1">0x6C4cb3C4Da1CdC4B7B1F41099F6eacbd82D8F2d2</span><span id="1view"></span>" style="top:0px; left:0px; 
             width:100%; height:100%; border: none; overflow: hidden;"&gt;&lt;/iframe&gt;
             </p>
           </div>
           <h4 class="codeBlockHeading">Embed link for Notion</h4>
           <div class="codeBlocks">
             <p>
-              https://mattwelter.github.io/niftycase/?addr=<span id="2">0x6C4cb3C4Da1CdC4B7B1F41099F6eacbd82D8F2d2</span><span id="2view">&view=1</span>
+              https://mattwelter.github.io/niftycase/?addr=<span id="2">0x6C4cb3C4Da1CdC4B7B1F41099F6eacbd82D8F2d2</span><span id="2view"></span>
             </p>
           </div>
         </section>
@@ -932,6 +934,19 @@
           var div = evt.target.parentNode;
           var input = div.querySelector('.user_input');
           var value = input.value;
+          console.log("2")
+          $('#change').attr("src","https://mattwelter.github.io/niftycase/?addr="+value);
+        });
+      }
+
+      /*
+      var el = document.getElementById("genButton")
+      if(el){
+        el.addEventListener("click", function updateNow(evt) {
+          console.log("1")
+          var div = evt.target.parentNode;
+          var input = div.querySelector('.user_input');
+          var value = input.value;
           var view1 = '&view=1';
           var view2 = '&view=2';
           console.log("2")
@@ -954,6 +969,7 @@
           }
         });
       }
+      */
 
     </script>
 
